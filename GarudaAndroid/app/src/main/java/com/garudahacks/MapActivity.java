@@ -13,6 +13,8 @@ import com.mapbox.android.core.location.LocationEngineProvider;
 import com.mapbox.android.core.permissions.PermissionsListener;
 import com.mapbox.android.core.permissions.PermissionsManager;
 import com.mapbox.mapboxsdk.Mapbox;
+import com.mapbox.mapboxsdk.annotations.Marker;
+import com.mapbox.mapboxsdk.annotations.MarkerOptions;
 import com.mapbox.mapboxsdk.camera.CameraUpdateFactory;
 import com.mapbox.mapboxsdk.geometry.LatLng;
 import com.mapbox.mapboxsdk.maps.MapView;
@@ -82,6 +84,9 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     public void onMapReady(MapboxMap mapboxMap) {
         map = mapboxMap;
         enableLocation();
+        //test marker formatting
+        LatLng latLng = new LatLng(33.7756, -84.3963);
+        map.addMarker(new MarkerOptions().position(latLng));
     }
 
     private void enableLocation() {
