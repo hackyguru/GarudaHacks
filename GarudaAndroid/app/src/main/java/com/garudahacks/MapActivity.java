@@ -2,6 +2,8 @@ package com.garudahacks;
 
 import android.location.Location;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -35,13 +37,14 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     private LocationEngine locationEngine;
     private LocationLayerPlugin locationLayerPlugin;
     private Location originLocation;
-
+    private TextView status;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Mapbox.getInstance(this, getString(R.string.access_token));
         setContentView(R.layout.activity_map);
         mapView = (MapView) findViewById(R.id.mapView);
+        status = findViewById(R.id.statusText);
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
 
@@ -84,9 +87,13 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     public void onMapReady(MapboxMap mapboxMap) {
         map = mapboxMap;
         enableLocation();
+
+        //hardcoding status message
+        status.setVisibility(View.VISIBLE);
         //test marker formatting
         LatLng latLng = new LatLng(33.7756, -84.3963);
         map.addMarker(new MarkerOptions().position(latLng));
+
     }
 
     private void enableLocation() {
