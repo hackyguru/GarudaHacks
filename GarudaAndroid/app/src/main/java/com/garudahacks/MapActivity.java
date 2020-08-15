@@ -1,7 +1,12 @@
 package com.garudahacks;
 
+import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ScrollView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -48,12 +53,19 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     public ArrayList<String> IdList;
     public coordinates points;
     public boolean initial;
+    private TextView status;
+    private ScrollView scrollView;
+    private Button statsButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Mapbox.getInstance(this, getString(R.string.access_token));
         setContentView(R.layout.activity_map);
         mapView = (MapView) findViewById(R.id.mapView);
+        status = findViewById(R.id.statusText);
+        scrollView = findViewById(R.id.scrollView);
+        statsButton = findViewById(R.id.statsButton);
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
 
@@ -98,9 +110,22 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     public void onMapReady(MapboxMap mapboxMap) {
         map = mapboxMap;
         enableLocation();
+
+        //hardcoding status message
+        status.setVisibility(View.VISIBLE);
+        scrollView.setVisibility(View.VISIBLE);
+        statsButton.setVisibility(View.VISIBLE);
+        statsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent stats = new Intent(v.getContext(), StatsActivity.class);
+                startActivity(stats);
+            }
+        });
         //test marker formatting
         LatLng latLng = new LatLng(33.7756, -84.3963);
         map.addMarker(new MarkerOptions().position(latLng));
+
     }
 
     private void enableLocation() {

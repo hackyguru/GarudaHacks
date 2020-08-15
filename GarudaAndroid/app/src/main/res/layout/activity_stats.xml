@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".StatsActivity">
+
+    <TextView
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="#ffff"
+        android:id="@+id/statsTitleText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="5dp"
+        android:text="STATISTICS">
+    </TextView>
+
+    <TextView
+        android:textColor="#ffff"
+        android:id="@+id/InteractionsText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="5dp"
+        android:text="INTERACTIONS"
+        app:layout_constraintTop_toBottomOf="@id/statsTitleText">
+    </TextView>
+
+    <TextView
+        android:textColor="#ffff"
+        android:id="@+id/InteractionsCount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="5dp"
+        android:text="0"
+        android:gravity="end"
+        app:layout_constraintTop_toBottomOf="@id/statsTitleText">
+    </TextView>
+
+    <TextView
+        android:textColor="#ffff"
+        android:id="@+id/AlertText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="5dp"
+        android:text="ALERTS"
+        android:gravity="start"
+        app:layout_constraintTop_toBottomOf="@id/InteractionsText">
+    </TextView>
+
+    <TextView
+        android:textColor="#ffff"
+        android:id="@+id/AlertCount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="5dp"
+        android:text="0"
+        android:gravity="end"
+        app:layout_constraintTop_toBottomOf="@id/InteractionsText">
+    </TextView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
