@@ -1,5 +1,6 @@
 package com.garudahacks;
 
+import android.Manifest;
 import android.location.Location;
 import android.os.Bundle;
 import android.view.View;
@@ -7,6 +8,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import com.mapbox.android.core.location.LocationEngine;
 import com.mapbox.android.core.location.LocationEngineListener;
@@ -25,6 +27,7 @@ import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
 import com.mapbox.mapboxsdk.plugins.locationlayer.LocationLayerPlugin;
 import com.mapbox.mapboxsdk.plugins.locationlayer.modes.CameraMode;
 import com.mapbox.mapboxsdk.plugins.locationlayer.modes.RenderMode;
+import io.radar.sdk.Radar;
 
 import java.util.List;
 
@@ -38,9 +41,11 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     private LocationLayerPlugin locationLayerPlugin;
     private Location originLocation;
     private TextView status;
+    private static final String publishableKey = "prj_live_pk_31111eda3a4750f20c3eadcbdbb59d26dd877fa2";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Radar.initialize(this, publishableKey);
         Mapbox.getInstance(this, getString(R.string.access_token));
         setContentView(R.layout.activity_map);
         mapView = (MapView) findViewById(R.id.mapView);
