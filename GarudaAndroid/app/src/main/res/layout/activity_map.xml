@@ -106,7 +106,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="end"
                     android:padding="15dp"
-                    android:text="0"
+                    android:text="1"
                     android:textColor="#000000"
                     android:textSize="35sp"
                     tools:ignore="HardcodedText" />
@@ -140,7 +140,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="end"
                     android:padding="15dp"
-                    android:text="0"
+                    android:text="2"
                     android:textColor="#000000"
                     android:textSize="35sp"
                     tools:ignore="HardcodedText" />
@@ -174,7 +174,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="end"
                     android:padding="15dp"
-                    android:text="0"
+                    android:text="3"
                     android:textColor="#000000"
                     android:textSize="35sp"
                     tools:ignore="HardcodedText" />
@@ -189,7 +189,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginBottom="5dp"
-                mapbox:cardBackgroundColor="#A7EC57"
+                mapbox:cardBackgroundColor="#FFEB3B"
                 mapbox:cardCornerRadius="8dp">
 
                 <TextView
@@ -208,7 +208,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="end"
                     android:padding="15dp"
-                    android:text="0"
+                    android:text="2"
                     android:textColor="#000000"
                     android:textSize="35sp"
                     tools:ignore="HardcodedText" />
